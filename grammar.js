@@ -17,7 +17,7 @@ module.exports = grammar({
       choice($.function_declaration, $.variable_declaration, $.statement),
 
     function_declaration: ($) =>
-      seq("func", $.identifier, $.parameter_list, $.block),
+      seq("func", field("name", $.identifier), $.parameter_list, $.block),
 
     parameter_list: ($) =>
       seq("(", optional(commaSeparated($.identifier)), ")"),

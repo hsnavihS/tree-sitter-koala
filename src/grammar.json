@@ -34,8 +34,12 @@
           "value": "func"
         },
         {
-          "type": "SYMBOL",
-          "name": "identifier"
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         },
         {
           "type": "SYMBOL",
@@ -849,3 +853,4 @@
   "supertypes": [],
   "reserved": {}
 }
+
