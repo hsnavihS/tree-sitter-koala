@@ -22,7 +22,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "statement"
+          "name": "_statement"
         }
       ]
     },
@@ -135,7 +135,7 @@
         }
       ]
     },
-    "statement": {
+    "_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -251,7 +251,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "statement"
+          "name": "_statement"
         }
       ]
     },
@@ -279,7 +279,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "statement"
+            "name": "_statement"
           },
           {
             "type": "CHOICE",
@@ -293,7 +293,7 @@
                   },
                   {
                     "type": "SYMBOL",
-                    "name": "statement"
+                    "name": "_statement"
                   }
                 ]
               },
@@ -326,7 +326,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "statement"
+          "name": "_statement"
         }
       ]
     },

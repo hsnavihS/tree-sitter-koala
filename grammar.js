@@ -16,7 +16,7 @@ module.exports = grammar({
     program: ($) => repeat($._declaration),
 
     _declaration: ($) =>
-      choice($.function_declaration, $.variable_declaration, $.statement),
+      choice($.function_declaration, $.variable_declaration, $._statement),
 
     function_declaration: ($) =>
       seq("func", field("name", $.identifier), $.parameter_list, $.block),
@@ -27,7 +27,7 @@ module.exports = grammar({
     variable_declaration: ($) =>
       seq("var", $.identifier, optional(seq("=", $.expression)), ";"),
 
-    statement: ($) =>
+    _statement: ($) =>
       choice(
         $.expression_statement,
         $.for_statement,
@@ -49,7 +49,7 @@ module.exports = grammar({
         ";",
         optional($.expression),
         ")",
-        $.statement,
+        $._statement,
       ),
 
     if_statement: ($) =>
@@ -59,12 +59,12 @@ module.exports = grammar({
           "(",
           $.expression,
           ")",
-          $.statement,
-          optional(seq("else", $.statement)),
+          $._statement,
+          optional(seq("else", $._statement)),
         ),
       ),
 
-    while_statement: ($) => seq("while", "(", $.expression, ")", $.statement),
+    while_statement: ($) => seq("while", "(", $.expression, ")", $._statement),
 
     print_statement: ($) => seq("print", $.expression, ";"),
 
