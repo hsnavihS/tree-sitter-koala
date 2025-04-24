@@ -50,3 +50,6 @@
 ;; Literals
 (string) @string
 (number) @number
+
+;; Comments
+(comment) @comment

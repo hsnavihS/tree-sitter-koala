@@ -10,6 +10,8 @@
 module.exports = grammar({
   name: "koala",
 
+  extras: ($) => [$.comment, /[\s]/],
+
   rules: {
     program: ($) => repeat($._declaration),
 
@@ -109,6 +111,14 @@ module.exports = grammar({
       ),
 
     call_suffix: ($) => seq("(", optional(commaSeparated($.expression)), ")"),
+
+    comment: (_) =>
+      token(
+        choice(
+          seq("//", /[^\r\n\u2028\u2029]*/),
+          seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
+        ),
+      ),
 
     primary: ($) =>
       choice(
