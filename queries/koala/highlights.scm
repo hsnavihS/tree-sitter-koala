@@ -1,12 +1,6 @@
 ;; highlights.scm
 
 ;; Keywords
-"func" @keyword
-"var" @keyword
-"for" @repeat
-"while" @repeat
-"if" @conditional
-"else" @conditional
 "return" @keyword
 "print" @keyword
 "and" @keyword.operator
@@ -14,6 +8,16 @@
 "true" @boolean
 "false" @boolean
 "nil" @constant.builtin
+
+;; Control flow keywords
+"for" @repeat
+"while" @repeat
+"if" @conditional
+"else" @conditional
+
+;; Types
+"var" @type
+"func" @type
 
 ;; Identifiers
 (identifier) @variable
@@ -27,7 +31,7 @@
   "if" @keyword)
 
 (if_statement
-	"else" @keyword)
+  "else" @keyword)
 
 (for_statement
   "for" @keyword)
@@ -40,26 +44,33 @@
 (parameter_list (identifier) @parameter)
 
 ;; Operators
-"=" @operator
-"==" @operator
-"!=" @operator
-">" @operator
-">=" @operator
-"<" @operator
-"<=" @operator
-"+" @operator
-"-" @operator
-"*" @operator
-"/" @operator
-"!" @operator
+[
+  "="
+  "=="
+  "!="
+  ">"
+  ">="
+  "<"
+  "<="
+  "+"
+  "-"
+  "*"
+  "/"
+  "!"
+] @operator
 
 ;; Blocks and punctuation
-"{" @punctuation.bracket
-"}" @punctuation.bracket
-"(" @punctuation.bracket
-")" @punctuation.bracket
-";" @punctuation.delimiter
-"," @punctuation.delimiter
+[
+  "{"
+  "}"
+  "("
+  ")"
+] @punctuation.bracket
+
+[
+  ","
+  ";"
+] @punctuation.bracket
 
 ;; Literals
 (string) @string
@@ -67,3 +78,4 @@
 
 ;; Comments
 (comment) @comment
+
