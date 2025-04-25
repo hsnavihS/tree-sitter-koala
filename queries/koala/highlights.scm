@@ -79,3 +79,4 @@
 ;; Comments
 (comment) @comment
 
+(ERROR) @error
