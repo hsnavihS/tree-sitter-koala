@@ -90,9 +90,10 @@ This creates `src/parser.c` (and some other files) using `grammar.js`.
 
 ## Future
 
-These things would be cool to have, but since this is just a toy language I'm not going to invest time in these right now:
+These things would be cool to have, but since this is just a toy language, I think these would be overkill and I'd rather work on the LSP
 1. Support for editors that work on TextMate grammars for highlighting (VSCode being the major one I wanted to have support for)
 2. Add support for more queries like folding, and locals
+3. Tests for every rule in the grammar, and a CI pipeline to run these on every push
 
 ---
 
